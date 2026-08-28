@@ -61,7 +61,7 @@ export default function ProjectCard({ project, wide = false }) {
             {t('common.viewDetails')}
             <ArrowUpRight size={15} />
           </Link>
-          {project.github && (
+          {project.github ? (
             <a
               href={project.github}
               target="_blank"
@@ -71,7 +71,12 @@ export default function ProjectCard({ project, wide = false }) {
               <GithubIcon size={15} />
               {t('common.github')}
             </a>
-          )}
+          ) : project.repoOnRequest ? (
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-2/70 px-3 py-1.5 text-xs font-medium text-ink-faint">
+              <GithubIcon size={13} />
+              {t('common.repoPrivate')}
+            </span>
+          ) : null}
           {project.demo ? (
             <a
               href={project.demo}

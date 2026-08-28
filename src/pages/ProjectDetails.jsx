@@ -72,8 +72,8 @@ export default function ProjectDetails() {
             <span>{project.year}</span>
           </div>
 
-          <div className="mt-2 flex flex-wrap gap-3">
-            {project.github && (
+          <div className="mt-2 flex flex-wrap items-center gap-3">
+            {project.github ? (
               <a
                 href={project.github}
                 target="_blank"
@@ -82,7 +82,11 @@ export default function ProjectDetails() {
               >
                 <GithubIcon size={16} /> {t('detail.repository')}
               </a>
-            )}
+            ) : project.repoOnRequest ? (
+              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface-2/70 px-4 py-2 text-xs font-medium text-ink-faint">
+                <GithubIcon size={14} /> {t('common.repoPrivate')}
+              </span>
+            ) : null}
             {project.demo ? (
               <a
                 href={project.demo}
@@ -165,7 +169,7 @@ export default function ProjectDetails() {
               </div>
             </div>
             <div className="flex flex-col gap-3">
-              {project.github && (
+              {project.github ? (
                 <a
                   href={project.github}
                   target="_blank"
@@ -174,7 +178,11 @@ export default function ProjectDetails() {
                 >
                   <GithubIcon size={16} /> {t('detail.viewCode')}
                 </a>
-              )}
+              ) : project.repoOnRequest ? (
+                <span className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface-2/70 px-5 py-2.5 text-xs font-medium text-ink-faint">
+                  <GithubIcon size={14} /> {t('common.repoPrivate')}
+                </span>
+              ) : null}
               {project.demo ? (
                 <a
                   href={project.demo}

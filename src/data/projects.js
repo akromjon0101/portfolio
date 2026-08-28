@@ -14,7 +14,7 @@ export const projects = [
     screenshots: [],
     stack: ['React 19', 'Vite', 'Node.js', 'Express', 'MongoDB Atlas', 'OpenAI GPT-4o', 'JWT'],
     demo: 'https://www.mock-platform.uz/',
-    github: 'https://github.com/akromjon0101/mock-platform',
+    repoOnRequest: true,
     featured: true,
     content: {
       en: {
@@ -97,7 +97,7 @@ export const projects = [
     screenshots: [],
     stack: ['React 19', 'Vite', 'React Router', 'Node.js', 'Express', 'MongoDB', 'JWT', 'OpenAI GPT-4o'],
     demo: 'https://www.harvard-school.uz/',
-    github: 'https://github.com/akromjon0101/harvard-school',
+    repoOnRequest: true,
     featured: true,
     content: {
       en: {
