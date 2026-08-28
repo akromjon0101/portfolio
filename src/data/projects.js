@@ -105,11 +105,11 @@ export const projects = [
         title: 'Mock Platform',
         tagline: 'The next generation of the IELTS mock exam — AI examiner, instant band scores and progress tracking.',
         description:
-          'A production IELTS practice platform that builds on Harvard School: an AI examiner scores Speaking recordings and Writing essays in seconds, with a band-score trend chart and streaks. Live at mock-platform.uz.',
+          'A production IELTS practice platform with an AI examiner that scores Speaking recordings and Writing essays in seconds, plus a band-score trend chart and daily streaks. Live at mock-platform.uz.',
         role:
           'Sole full-stack developer — architecture, React frontend, Express/MongoDB backend, OpenAI integration, security headers and deployment.',
         overview:
-          'Mock Platform is a live IELTS preparation product focused on instant, automated feedback. It carries over the full four-section exam engine and adds an AI examiner plus student analytics.',
+          'Mock Platform is a live IELTS preparation product focused on instant, automated feedback. It provides a full four-section exam engine with an AI examiner and student analytics.',
         problem:
           'Manually scoring every Speaking recording and Writing essay does not scale, and students practicing alone get no exam-style feedback between sessions with a teacher.',
         solution:
@@ -128,11 +128,11 @@ export const projects = [
         title: 'Mock Platform',
         tagline: 'IELTS mock-imtihonning keyingi avlodi — AI imtihon oluvchi, bir zumda band-baho va progress kuzatuvi.',
         description:
-          'Harvard School asosida qurilgan production IELTS mashq platformasi: AI imtihon oluvchi Speaking yozuvlari va Writing insholarini soniyalarda baholaydi, band-baho grafigi va ketma-ket kunlar (streak) bilan. mock-platform.uz manzilida jonli.',
+          'AI imtihon oluvchili production IELTS mashq platformasi: Speaking yozuvlari va Writing insholarini soniyalarda baholaydi, band-baho grafigi va kunlik ketma-ket kunlar (streak) bilan. mock-platform.uz manzilida jonli.',
         role:
           'Yagona full-stack dasturchi — arxitektura, React frontend, Express/MongoDB backend, OpenAI integratsiyasi, xavfsizlik sozlamalari va deploy.',
         overview:
-          'Mock Platform — bir zumda, avtomatik izohga qaratilgan jonli IELTS tayyorgarlik mahsuloti. To‘rt bo‘limli imtihon dvigatelini to‘liq oladi va unga AI imtihon oluvchi hamda o‘quvchi analitikasini qo‘shadi.',
+          'Mock Platform — bir zumda, avtomatik izohga qaratilgan jonli IELTS tayyorgarlik mahsuloti. To‘rt bo‘limli to‘liq imtihon dvigateli, AI imtihon oluvchi va o‘quvchi analitikasi bilan.',
         problem:
           'Har bir Speaking yozuvi va Writing inshosini qo‘lda baholash ko‘lamlanmaydi, mustaqil mashq qilayotgan o‘quvchilar esa o‘qituvchi bilan darslar orasida imtihon uslubidagi izoh ololmaydi.',
         solution:
@@ -151,11 +151,11 @@ export const projects = [
         title: 'Mock Platform',
         tagline: 'Новое поколение пробного IELTS — AI-экзаменатор, мгновенные band-оценки и отслеживание прогресса.',
         description:
-          'Продакшн-платформа подготовки к IELTS, развивающая Harvard School: AI-экзаменатор оценивает записи Speaking и эссе Writing за секунды, есть график динамики band и streak-и. Работает на mock-platform.uz.',
+          'Продакшн-платформа подготовки к IELTS с AI-экзаменатором: оценивает записи Speaking и эссе Writing за секунды, с графиком динамики band и ежедневными streak-ами. Работает на mock-platform.uz.',
         role:
           'Единственный full-stack разработчик — архитектура, React-фронтенд, бэкенд на Express/MongoDB, интеграция OpenAI, заголовки безопасности и деплой.',
         overview:
-          'Mock Platform — живой продукт подготовки к IELTS с упором на мгновенную автоматическую обратную связь. Он переносит полный движок экзамена из четырёх разделов и добавляет AI-экзаменатора и аналитику для студента.',
+          'Mock Platform — живой продукт подготовки к IELTS с упором на мгновенную автоматическую обратную связь. Полный движок экзамена из четырёх разделов с AI-экзаменатором и аналитикой для студента.',
         problem:
           'Ручная оценка каждой записи Speaking и эссе Writing не масштабируется, а студенты, занимающиеся самостоятельно, не получают экзаменационной обратной связи между занятиями с преподавателем.',
         solution:
