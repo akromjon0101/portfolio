@@ -1,5 +1,5 @@
 import { Mail } from 'lucide-react'
-import { GithubIcon, LinkedinIcon, TelegramIcon } from '../icons/BrandIcons.jsx'
+import { GithubIcon, LinkedinIcon, TelegramIcon, InstagramIcon } from '../icons/BrandIcons.jsx'
 import { profile } from '../../data/config.js'
 import { useT } from '../../i18n/index.jsx'
 import LanguageSwitcher from '../LanguageSwitcher.jsx'
@@ -8,6 +8,7 @@ const socials = [
   { icon: GithubIcon, href: profile.github, label: 'GitHub' },
   { icon: LinkedinIcon, href: profile.linkedin, label: 'LinkedIn' },
   { icon: TelegramIcon, href: profile.telegram, label: 'Telegram' },
+  { icon: InstagramIcon, href: profile.instagram, label: 'Instagram' },
 ]
 
 // Fixed profile card, desktop only (lg+) — stays in view while the main

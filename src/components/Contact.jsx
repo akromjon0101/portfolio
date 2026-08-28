@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Mail, Send, CheckCircle2 } from 'lucide-react'
-import { GithubIcon, LinkedinIcon, TelegramIcon } from './icons/BrandIcons.jsx'
+import { GithubIcon, LinkedinIcon, TelegramIcon, InstagramIcon } from './icons/BrandIcons.jsx'
 import SectionHeading from './SectionHeading.jsx'
 import Reveal from './Reveal.jsx'
 import { StaggerGroup, StaggerItem } from './Stagger.jsx'
@@ -12,6 +12,7 @@ const contactLinks = [
   { icon: GithubIcon, label: 'GitHub', value: '@' + profile.github.split('/').pop(), href: profile.github },
   { icon: LinkedinIcon, label: 'LinkedIn', value: 'Akromjon Toshpulatov', href: profile.linkedin },
   { icon: TelegramIcon, label: 'Telegram', value: '@' + profile.telegram.split('/').pop(), href: profile.telegram },
+  { icon: InstagramIcon, label: 'Instagram', value: '@' + profile.instagram.split('/').filter(Boolean).pop(), href: profile.instagram },
 ]
 
 const initialForm = { name: '', email: '', subject: '', message: '' }

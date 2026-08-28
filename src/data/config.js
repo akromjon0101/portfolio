@@ -9,7 +9,8 @@ export const profile = {
   email: 'akromjontoshpulatov0101@gmail.com',
   github: 'https://github.com/akromjon0101',
   linkedin: 'https://www.linkedin.com/in/akromjon-toshpulatov-91035b253/',
-  telegram: 'https://t.me/akromjontoshpulatov',
+  telegram: 'https://t.me/akromjon011',
+  instagram: 'https://instagram.com/akromjon_110_',
   resumeUrl: '/cv.png',
 }
 

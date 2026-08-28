@@ -1,5 +1,5 @@
 import { Heart } from 'lucide-react'
-import { GithubIcon, LinkedinIcon, TelegramIcon } from './icons/BrandIcons.jsx'
+import { GithubIcon, LinkedinIcon, TelegramIcon, InstagramIcon } from './icons/BrandIcons.jsx'
 import { profile } from '../data/config.js'
 import { useT } from '../i18n/index.jsx'
 
@@ -7,6 +7,7 @@ const socials = [
   { icon: GithubIcon, href: profile.github, label: 'GitHub' },
   { icon: LinkedinIcon, href: profile.linkedin, label: 'LinkedIn' },
   { icon: TelegramIcon, href: profile.telegram, label: 'Telegram' },
+  { icon: InstagramIcon, href: profile.instagram, label: 'Instagram' },
 ]
 
 export default function Footer() {
