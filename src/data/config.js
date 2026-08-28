@@ -10,7 +10,7 @@ export const profile = {
   github: 'https://github.com/akromjon0101',
   linkedin: 'https://www.linkedin.com/in/akromjon-toshpulatov-91035b253/',
   telegram: 'https://t.me/akromjontoshpulatov',
-  resumeUrl: '/resume.pdf',
+  resumeUrl: '/cv.png',
 }
 
 // `labelKey` resolves against the i18n dictionary (see <Hero />).

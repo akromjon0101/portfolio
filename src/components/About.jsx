@@ -36,7 +36,8 @@ export default function About() {
             </div>
             <a
               href={profile.resumeUrl}
-              download
+              target="_blank"
+              rel="noreferrer"
               className="btn-lift inline-flex items-center gap-2 rounded-full border border-border-strong px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-ink-faint hover:bg-surface"
             >
               <FileDown size={16} />

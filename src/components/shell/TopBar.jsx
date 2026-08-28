@@ -108,7 +108,8 @@ export default function TopBar() {
                 </a>
                 <a
                   href={profile.resumeUrl}
-                  download
+                  target="_blank"
+                  rel="noreferrer"
                   className="flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-canvas"
                 >
                   <FileDown size={16} /> {t('common.resume')}
