@@ -2,9 +2,93 @@
 // Non-text fields (slug, image, links, stack) live at the top level;
 // every piece of user-facing copy is provided per language under `content`.
 // Add a project here and it appears in <Projects /> and at
-// /projects/:slug via <ProjectDetails />.
+// /projects/:slug via <ProjectDetails />. The first entry is rendered
+// as the large featured card.
 
 export const projects = [
+  {
+    slug: 'mock-platform',
+    year: '2026',
+    domain: 'mock-platform.uz',
+    image: '/projects/mock-platform.jpg',
+    screenshots: [],
+    stack: ['React 19', 'Vite', 'Node.js', 'Express', 'MongoDB Atlas', 'OpenAI GPT-4o', 'JWT'],
+    demo: 'https://www.mock-platform.uz/',
+    github: 'https://github.com/akromjon0101/mock-platform',
+    featured: true,
+    content: {
+      en: {
+        title: 'Mock Platform',
+        tagline: 'The next generation of the IELTS mock exam — AI examiner, instant band scores and progress tracking.',
+        description:
+          'My flagship production project: an IELTS practice platform with an AI examiner that scores Speaking recordings and Writing essays in seconds, plus a band-score trend chart and daily streaks. Live at mock-platform.uz.',
+        role:
+          'Sole full-stack developer — architecture, React frontend, Express/MongoDB backend, OpenAI integration, security headers and deployment.',
+        overview:
+          'Mock Platform is a live IELTS preparation product focused on instant, automated feedback. It provides a full four-section exam engine with an AI examiner and student analytics.',
+        problem:
+          'Manually scoring every Speaking recording and Writing essay does not scale, and students practicing alone get no exam-style feedback between sessions with a teacher.',
+        solution:
+          'Added an AI evaluation layer on top of the exam engine: Speaking answers are transcribed and analyzed for fluency, pronunciation and coherence; Writing is scored against band descriptors with actionable feedback — both within about 30 seconds of submission. A dashboard shows band-score trends and practice streaks.',
+        features: [
+          'AI examiner — Speaking and Writing scored automatically in ~30 seconds',
+          'Band-score trend chart and daily practice streaks',
+          'Full Listening, Reading, Writing, Speaking exam flow',
+          'First test free, then guided practice with feedback history',
+          'Hardened deployment — security headers, caching rules, JWT auth',
+        ],
+        challenges:
+          'Keeping AI turnaround fast enough to feel instant while calibrating scores to real IELTS band descriptors, and shipping a secure, cache-correct production deployment.',
+      },
+      uz: {
+        title: 'Mock Platform',
+        tagline: 'IELTS mock-imtihonning keyingi avlodi — AI imtihon oluvchi, bir zumda band-baho va progress kuzatuvi.',
+        description:
+          'Mening asosiy production loyiham: AI imtihon oluvchili IELTS mashq platformasi — Speaking yozuvlari va Writing insholarini soniyalarda baholaydi, band-baho grafigi va kunlik ketma-ket kunlar (streak) bilan. mock-platform.uz manzilida jonli.',
+        role:
+          'Yagona full-stack dasturchi — arxitektura, React frontend, Express/MongoDB backend, OpenAI integratsiyasi, xavfsizlik sozlamalari va deploy.',
+        overview:
+          'Mock Platform — bir zumda, avtomatik izohga qaratilgan jonli IELTS tayyorgarlik mahsuloti. To‘rt bo‘limli to‘liq imtihon dvigateli, AI imtihon oluvchi va o‘quvchi analitikasi bilan.',
+        problem:
+          'Har bir Speaking yozuvi va Writing inshosini qo‘lda baholash ko‘lamlanmaydi, mustaqil mashq qilayotgan o‘quvchilar esa o‘qituvchi bilan darslar orasida imtihon uslubidagi izoh ololmaydi.',
+        solution:
+          'Imtihon dvigateli ustiga AI baholash qatlami qo‘shildi: Speaking javoblari transkripsiya qilinib ravonlik, talaffuz va izchillik bo‘yicha tahlil qilinadi; Writing band deskriptorlari bo‘yicha baholanadi — ikkalasi ham javob berilgach ~30 soniyada. Dashboard band-baho tendensiyasi va mashq streaklarini ko‘rsatadi.',
+        features: [
+          'AI imtihon oluvchi — Speaking va Writing ~30 soniyada avtomatik baholanadi',
+          'Band-baho tendensiyasi grafigi va kunlik mashq streaklari',
+          'To‘liq Listening, Reading, Writing, Speaking imtihon oqimi',
+          'Birinchi test bepul, keyin izoh tarixi bilan yo‘naltirilgan mashq',
+          'Mustahkamlangan deploy — xavfsizlik header’lari, keshlash qoidalari, JWT auth',
+        ],
+        challenges:
+          'AI javobini bir zumdek tez saqlab, baholarni real IELTS band deskriptorlariga sozlash, hamda xavfsiz va kesh jihatidan to‘g‘ri production deploy chiqarish.',
+      },
+      ru: {
+        title: 'Mock Platform',
+        tagline: 'Новое поколение пробного IELTS — AI-экзаменатор, мгновенные band-оценки и отслеживание прогресса.',
+        description:
+          'Мой главный продакшн-проект: платформа подготовки к IELTS с AI-экзаменатором — оценивает записи Speaking и эссе Writing за секунды, с графиком динамики band и ежедневными streak-ами. Работает на mock-platform.uz.',
+        role:
+          'Единственный full-stack разработчик — архитектура, React-фронтенд, бэкенд на Express/MongoDB, интеграция OpenAI, заголовки безопасности и деплой.',
+        overview:
+          'Mock Platform — живой продукт подготовки к IELTS с упором на мгновенную автоматическую обратную связь. Полный движок экзамена из четырёх разделов с AI-экзаменатором и аналитикой для студента.',
+        problem:
+          'Ручная оценка каждой записи Speaking и эссе Writing не масштабируется, а студенты, занимающиеся самостоятельно, не получают экзаменационной обратной связи между занятиями с преподавателем.',
+        solution:
+          'Поверх движка экзамена добавлен слой AI-оценки: ответы Speaking транскрибируются и анализируются на беглость, произношение и связность; Writing оценивается по band-дескрипторам с конкретной обратной связью — и то и другое примерно за 30 секунд после отправки. Дашборд показывает динамику band и streak-и практики.',
+        features: [
+          'AI-экзаменатор — Speaking и Writing оцениваются автоматически за ~30 секунд',
+          'График динамики band-оценки и ежедневные streak-и практики',
+          'Полный поток экзамена Listening, Reading, Writing, Speaking',
+          'Первый тест бесплатно, затем направляемая практика с историей обратной связи',
+          'Усиленный деплой — заголовки безопасности, правила кэширования, JWT-аутентификация',
+        ],
+        challenges:
+          'Сохранить скорость ответа AI на уровне «мгновенно», калибруя оценки под реальные band-дескрипторы IELTS, и выпустить безопасный, корректный по кэшу продакшн-деплой.',
+      },
+    },
+  },
+
   {
     slug: 'harvard-school',
     year: '2025 — now',
@@ -20,7 +104,7 @@ export const projects = [
         title: 'Harvard School',
         tagline: 'A live Computer-Based IELTS mock-exam portal, used by real students preparing for the exam.',
         description:
-          'My flagship production project: a full CBT IELTS mock-exam platform with Listening, Reading, Writing and Speaking, plus AI band-score feedback. Live at harvard-school.uz.',
+          'A full CBT IELTS mock-exam platform with Listening, Reading, Writing and Speaking, plus AI band-score feedback. Live in production at harvard-school.uz.',
         role: 'Sole full-stack developer — product design, React frontend, Express/MongoDB API, AI grading integration, deployment and maintenance.',
         overview:
           'Harvard School is a complete Computer-Based IELTS (CBT) practice platform that recreates the real exam interface. It is deployed to a live domain and actively used by students, not a portfolio demo.',
@@ -43,7 +127,7 @@ export const projects = [
         title: 'Harvard School',
         tagline: 'Jonli Computer-Based IELTS mock-imtihon portali — imtihonga tayyorlanayotgan real o‘quvchilar foydalanadi.',
         description:
-          'Mening asosiy production loyiham: Listening, Reading, Writing va Speaking bo‘limlari hamda AI band-baho izohi bilan to‘liq CBT IELTS mock-imtihon platformasi. harvard-school.uz manzilida jonli.',
+          'Listening, Reading, Writing va Speaking bo‘limlari hamda AI band-baho izohi bilan to‘liq CBT IELTS mock-imtihon platformasi. harvard-school.uz manzilida production’da jonli.',
         role:
           'Yagona full-stack dasturchi — mahsulot dizayni, React frontend, Express/MongoDB API, AI baholashni integratsiya qilish, deploy va texnik xizmat.',
         overview:
@@ -67,7 +151,7 @@ export const projects = [
         title: 'Harvard School',
         tagline: 'Живой портал компьютерных пробных экзаменов IELTS (CBT), которым пользуются реальные студенты.',
         description:
-          'Мой главный продакшн-проект: полноценная CBT-платформа пробного IELTS с Listening, Reading, Writing и Speaking и AI-оценкой по band-дескрипторам. Работает на harvard-school.uz.',
+          'Полноценная CBT-платформа пробного IELTS с Listening, Reading, Writing и Speaking и AI-оценкой по band-дескрипторам. Работает в продакшене на harvard-school.uz.',
         role:
           'Единственный full-stack разработчик — дизайн продукта, React-фронтенд, API на Express/MongoDB, интеграция AI-оценки, деплой и поддержка.',
         overview:
@@ -86,89 +170,6 @@ export const projects = [
         ],
         challenges:
           'Довести проект от локальной сборки до стабильного живого продукта, надёжно выдерживающего реальных пользователей и экзаменационные сессии, и откалибровать AI-оценки так, чтобы они достаточно точно соответствовали официальным дескрипторам IELTS.',
-      },
-    },
-  },
-
-  {
-    slug: 'mock-platform',
-    year: '2026',
-    domain: 'mock-platform.uz',
-    image: '/projects/mock-platform.jpg',
-    screenshots: [],
-    stack: ['React 19', 'Vite', 'Node.js', 'Express', 'MongoDB Atlas', 'OpenAI GPT-4o', 'JWT'],
-    demo: 'https://www.mock-platform.uz/',
-    github: 'https://github.com/akromjon0101/mock-platform',
-    featured: true,
-    content: {
-      en: {
-        title: 'Mock Platform',
-        tagline: 'The next generation of the IELTS mock exam — AI examiner, instant band scores and progress tracking.',
-        description:
-          'A production IELTS practice platform with an AI examiner that scores Speaking recordings and Writing essays in seconds, plus a band-score trend chart and daily streaks. Live at mock-platform.uz.',
-        role:
-          'Sole full-stack developer — architecture, React frontend, Express/MongoDB backend, OpenAI integration, security headers and deployment.',
-        overview:
-          'Mock Platform is a live IELTS preparation product focused on instant, automated feedback. It provides a full four-section exam engine with an AI examiner and student analytics.',
-        problem:
-          'Manually scoring every Speaking recording and Writing essay does not scale, and students practicing alone get no exam-style feedback between sessions with a teacher.',
-        solution:
-          'Added an AI evaluation layer on top of the exam engine: Speaking answers are transcribed and analyzed for fluency, pronunciation and coherence; Writing is scored against band descriptors with actionable feedback — both within about 30 seconds of submission. A dashboard shows band-score trends and practice streaks.',
-        features: [
-          'AI examiner — Speaking and Writing scored automatically in ~30 seconds',
-          'Band-score trend chart and daily practice streaks',
-          'Full Listening, Reading, Writing, Speaking exam flow',
-          'First test free, then guided practice with feedback history',
-          'Hardened deployment — security headers, caching rules, JWT auth',
-        ],
-        challenges:
-          'Keeping AI turnaround fast enough to feel instant while calibrating scores to real IELTS band descriptors, and shipping a secure, cache-correct production deployment.',
-      },
-      uz: {
-        title: 'Mock Platform',
-        tagline: 'IELTS mock-imtihonning keyingi avlodi — AI imtihon oluvchi, bir zumda band-baho va progress kuzatuvi.',
-        description:
-          'AI imtihon oluvchili production IELTS mashq platformasi: Speaking yozuvlari va Writing insholarini soniyalarda baholaydi, band-baho grafigi va kunlik ketma-ket kunlar (streak) bilan. mock-platform.uz manzilida jonli.',
-        role:
-          'Yagona full-stack dasturchi — arxitektura, React frontend, Express/MongoDB backend, OpenAI integratsiyasi, xavfsizlik sozlamalari va deploy.',
-        overview:
-          'Mock Platform — bir zumda, avtomatik izohga qaratilgan jonli IELTS tayyorgarlik mahsuloti. To‘rt bo‘limli to‘liq imtihon dvigateli, AI imtihon oluvchi va o‘quvchi analitikasi bilan.',
-        problem:
-          'Har bir Speaking yozuvi va Writing inshosini qo‘lda baholash ko‘lamlanmaydi, mustaqil mashq qilayotgan o‘quvchilar esa o‘qituvchi bilan darslar orasida imtihon uslubidagi izoh ololmaydi.',
-        solution:
-          'Imtihon dvigateli ustiga AI baholash qatlami qo‘shildi: Speaking javoblari transkripsiya qilinib ravonlik, talaffuz va izchillik bo‘yicha tahlil qilinadi; Writing band deskriptorlari bo‘yicha baholanadi — ikkalasi ham javob berilgach ~30 soniyada. Dashboard band-baho tendensiyasi va mashq streaklarini ko‘rsatadi.',
-        features: [
-          'AI imtihon oluvchi — Speaking va Writing ~30 soniyada avtomatik baholanadi',
-          'Band-baho tendensiyasi grafigi va kunlik mashq streaklari',
-          'To‘liq Listening, Reading, Writing, Speaking imtihon oqimi',
-          'Birinchi test bepul, keyin izoh tarixi bilan yo‘naltirilgan mashq',
-          'Mustahkamlangan deploy — xavfsizlik header’lari, keshlash qoidalari, JWT auth',
-        ],
-        challenges:
-          'AI javobini bir zumdek tez saqlab, baholarni real IELTS band deskriptorlariga sozlash, hamda xavfsiz va kesh jihatidan to‘g‘ri production deploy chiqarish.',
-      },
-      ru: {
-        title: 'Mock Platform',
-        tagline: 'Новое поколение пробного IELTS — AI-экзаменатор, мгновенные band-оценки и отслеживание прогресса.',
-        description:
-          'Продакшн-платформа подготовки к IELTS с AI-экзаменатором: оценивает записи Speaking и эссе Writing за секунды, с графиком динамики band и ежедневными streak-ами. Работает на mock-platform.uz.',
-        role:
-          'Единственный full-stack разработчик — архитектура, React-фронтенд, бэкенд на Express/MongoDB, интеграция OpenAI, заголовки безопасности и деплой.',
-        overview:
-          'Mock Platform — живой продукт подготовки к IELTS с упором на мгновенную автоматическую обратную связь. Полный движок экзамена из четырёх разделов с AI-экзаменатором и аналитикой для студента.',
-        problem:
-          'Ручная оценка каждой записи Speaking и эссе Writing не масштабируется, а студенты, занимающиеся самостоятельно, не получают экзаменационной обратной связи между занятиями с преподавателем.',
-        solution:
-          'Поверх движка экзамена добавлен слой AI-оценки: ответы Speaking транскрибируются и анализируются на беглость, произношение и связность; Writing оценивается по band-дескрипторам с конкретной обратной связью — и то и другое примерно за 30 секунд после отправки. Дашборд показывает динамику band и streak-и практики.',
-        features: [
-          'AI-экзаменатор — Speaking и Writing оцениваются автоматически за ~30 секунд',
-          'График динамики band-оценки и ежедневные streak-и практики',
-          'Полный поток экзамена Listening, Reading, Writing, Speaking',
-          'Первый тест бесплатно, затем направляемая практика с историей обратной связи',
-          'Усиленный деплой — заголовки безопасности, правила кэширования, JWT-аутентификация',
-        ],
-        challenges:
-          'Сохранить скорость ответа AI на уровне «мгновенно», калибруя оценки под реальные band-дескрипторы IELTS, и выпустить безопасный, корректный по кэшу продакшн-деплой.',
       },
     },
   },

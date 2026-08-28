@@ -37,7 +37,7 @@ export const dictionary = {
       titleAccent: 'experiences',
       titlePost: 'that solve real problems.',
       subtitle:
-        'I design and build modern, scalable web applications — from the interface down to the APIs behind it. Currently running Harvard School and Mock Platform in production.',
+        'I design and build modern, scalable web applications — from the interface down to the APIs behind it. Currently running Mock Platform and Harvard School in production.',
       ctaProjects: 'View My Projects',
       ctaContact: "Let's Work Together",
       scrollLabel: 'My Projects',
@@ -212,7 +212,7 @@ export const dictionary = {
       titleAccent: 'mahsulotlar',
       titlePost: 'yarataman.',
       subtitle:
-        'Zamonaviy, kengaytiriladigan veb-ilovalarni interfeysdan tortib orqasidagi API’largacha loyihalab quraman. Hozircha Harvard School va Mock Platform ishlab turgan holatda (production).',
+        'Zamonaviy, kengaytiriladigan veb-ilovalarni interfeysdan tortib orqasidagi API’largacha loyihalab quraman. Hozircha Mock Platform va Harvard School ishlab turgan holatda (production).',
       ctaProjects: 'Loyihalarimni ko‘rish',
       ctaContact: 'Birga ishlaymiz',
       scrollLabel: 'Loyihalarim',
@@ -387,7 +387,7 @@ export const dictionary = {
       titleAccent: 'продукты',
       titlePost: 'которые решают реальные задачи.',
       subtitle:
-        'Проектирую и разрабатываю современные масштабируемые веб-приложения — от интерфейса до API за ним. Сейчас Harvard School и Mock Platform работают в продакшене.',
+        'Проектирую и разрабатываю современные масштабируемые веб-приложения — от интерфейса до API за ним. Сейчас Mock Platform и Harvard School работают в продакшене.',
       ctaProjects: 'Смотреть проекты',
       ctaContact: 'Давайте работать вместе',
       scrollLabel: 'Мои проекты',
