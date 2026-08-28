@@ -1,6 +1,7 @@
 import { Heart } from 'lucide-react'
 import { GithubIcon, LinkedinIcon, TelegramIcon } from './icons/BrandIcons.jsx'
 import { profile } from '../data/config.js'
+import { useT } from '../i18n/index.jsx'
 
 const socials = [
   { icon: GithubIcon, href: profile.github, label: 'GitHub' },
@@ -9,10 +10,11 @@ const socials = [
 ]
 
 export default function Footer() {
+  const t = useT()
   return (
     <footer className="border-t border-border">
       <div className="container-xl flex flex-col items-center justify-between gap-6 py-10 sm:flex-row">
-        <p className="text-sm text-ink-faint">© 2026 Akrom. All rights reserved.</p>
+        <p className="text-sm text-ink-faint">{t('footer.rights')}</p>
 
         <div className="flex items-center gap-4">
           {socials.map(({ icon: Icon, href, label }) => (
@@ -30,7 +32,7 @@ export default function Footer() {
         </div>
 
         <p className="flex items-center gap-1.5 text-sm text-ink-faint">
-          Built with React &amp; <Heart size={14} className="fill-accent text-accent" />
+          {t('footer.builtWith')} <Heart size={14} className="fill-accent text-accent" />
         </p>
       </div>
     </footer>

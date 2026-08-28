@@ -3,6 +3,7 @@ import { Atom, Braces, Wind, Server, Network, Database, Flame, Terminal } from '
 import SectionHeading from './SectionHeading.jsx'
 import { StaggerGroup, StaggerItem } from './Stagger.jsx'
 import { topSkills } from '../data/skills.js'
+import { useT } from '../i18n/index.jsx'
 
 const iconMap = { Atom, Braces, Wind, Server, Network, Database, Flame, Terminal }
 
@@ -53,14 +54,15 @@ function SkillRing({ name, icon, level }) {
 }
 
 export default function Skills() {
+  const t = useT()
   return (
     <section id="skills" className="relative py-28 md:py-36">
       <div className="container-xl">
         <SectionHeading
           align="center"
-          eyebrow="Skills"
-          title="My Advantages"
-          subtitle="A focused toolkit for building complete, production-quality web applications."
+          eyebrow={t('skills.eyebrow')}
+          title={t('skills.title')}
+          subtitle={t('skills.subtitle')}
         />
 
         <StaggerGroup className="mt-16 grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-3 lg:grid-cols-4">

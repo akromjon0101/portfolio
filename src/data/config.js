@@ -1,51 +1,32 @@
 // Site-wide configuration: personal info, social links and headline stats.
-// Kept in one place so numbers stay easy to update honestly over time.
+// User-facing strings (stat labels, timeline copy) live in ../i18n/dictionary.js
+// and are matched to these entries by `key` / array order.
 
 export const profile = {
-  name: 'Akrom',
+  name: 'Akromjon',
   fullBrand: 'AKROM.DEV',
-  role: 'Full Stack Developer',
-  location: 'Uzbekistan',
+  roleKey: 'common.role',
   email: 'akromjontoshpulatov0101@gmail.com',
-  github: 'https://github.com/akromjontoshpulatov',
+  github: 'https://github.com/akromjon0101',
   linkedin: 'https://linkedin.com/in/akromjontoshpulatov',
   telegram: 'https://t.me/akromjontoshpulatov',
   resumeUrl: '/resume.pdf',
 }
 
+// `labelKey` resolves against the i18n dictionary (see <Hero />).
 export const stats = [
-  { label: 'Projects Built', value: 20, suffix: '+' },
-  { label: 'Years Learning & Building', value: 3, suffix: '+' },
-  { label: 'Technologies', value: 10, suffix: '+' },
-  { label: 'Passion for Development', value: 100, suffix: '%' },
+  { key: 'projects', labelKey: 'stats.projects', value: 12, suffix: '+' },
+  { key: 'years', labelKey: 'stats.years', value: 3, suffix: '+' },
+  { key: 'tech', labelKey: 'stats.tech', value: 12, suffix: '+' },
+  { key: 'passion', labelKey: 'stats.passion', value: 100, suffix: '%' },
 ]
 
-export const timeline = [
-  {
-    year: '2024',
-    title: 'Got started',
-    org: 'Self-taught / independent study',
-    description:
-      'Started building web applications and learning modern frontend development — HTML, CSS, JavaScript and the fundamentals of React.',
-  },
-  {
-    year: '2025',
-    title: 'Went deeper with React',
-    org: 'Freelance & independent projects',
-    description:
-      'Worked on increasingly complex React projects and real-world interfaces, picking up REST APIs, state management and responsive design along the way.',
-  },
-  {
-    year: '2026',
-    title: 'Building full-stack',
-    org: 'Harvard School & independent platforms',
-    description:
-      'Building full-stack applications, CRM systems, AI-powered features and scalable web platforms with React, Node.js and MongoDB.',
-  },
-]
+// Only the year lives here; title/org/description come from
+// dictionary[lang].experience.items in the same order.
+export const timeline = [{ year: '2024' }, { year: '2025' }, { year: '2026' }]
 
 export const githubStats = {
-  username: 'akromjontoshpulatov',
+  username: 'akromjon0101',
   repos: 24,
   contributions: 640,
   followers: 30,

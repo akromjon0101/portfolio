@@ -3,9 +3,11 @@ import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { GithubIcon } from './icons/BrandIcons.jsx'
 import { profile, stats } from '../data/config.js'
+import { useT } from '../i18n/index.jsx'
 import CircularScrollCTA from './shell/CircularScrollCTA.jsx'
 
 export default function Hero() {
+  const t = useT()
   const sectionRef = useRef(null)
   const spotlightRef = useRef(null)
 
@@ -64,7 +66,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-xs font-medium text-ink-dim"
           >
             <span className="h-2 w-2 rounded-full bg-accent" />
-            Available for freelance &amp; development opportunities
+            {t('hero.badge')}
           </motion.div>
 
           <motion.h1
@@ -73,8 +75,8 @@ export default function Hero() {
             transition={{ duration: 0.4, delay: 0.05 }}
             className="section-heading mt-6 text-[2.4rem] leading-[1.1] text-ink sm:text-5xl lg:text-6xl"
           >
-            Building digital <span className="text-accent">experiences</span> that
-            solve real problems.
+            {t('hero.titlePre')} <span className="text-accent">{t('hero.titleAccent')}</span>{' '}
+            {t('hero.titlePost')}
           </motion.h1>
 
           <motion.p
@@ -83,9 +85,7 @@ export default function Hero() {
             transition={{ duration: 0.4, delay: 0.1 }}
             className="mt-6 max-w-xl text-lg leading-relaxed text-ink-dim"
           >
-            I design and build modern, scalable web applications — from the
-            interface down to the APIs behind it. Currently running Harvard
-            School in production and building an AI-powered IELTS platform.
+            {t('hero.subtitle')}
           </motion.p>
 
           <motion.div
@@ -98,14 +98,14 @@ export default function Hero() {
               href="#projects"
               className="btn-lift group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-canvas transition-colors hover:bg-ink/90"
             >
-              View My Projects
+              {t('hero.ctaProjects')}
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
             </a>
             <a
               href="#contact"
               className="btn-lift inline-flex items-center gap-2 rounded-full border border-border-strong px-6 py-3.5 text-sm font-semibold text-ink transition-colors hover:border-ink-faint hover:bg-surface"
             >
-              Let&apos;s Work Together
+              {t('hero.ctaContact')}
             </a>
           </motion.div>
 
@@ -129,12 +129,14 @@ export default function Hero() {
             className="mt-16 flex flex-wrap gap-x-12 gap-y-6"
           >
             {stats.map((stat) => (
-              <div key={stat.label} className="flex flex-col gap-1">
+              <div key={stat.key} className="flex flex-col gap-1">
                 <span className="section-heading text-3xl text-accent sm:text-4xl">
                   {stat.value}
                   {stat.suffix}
                 </span>
-                <span className="max-w-[10rem] text-xs uppercase tracking-wide text-ink-faint">{stat.label}</span>
+                <span className="max-w-[10rem] text-xs uppercase tracking-wide text-ink-faint">
+                  {t(stat.labelKey)}
+                </span>
               </div>
             ))}
           </motion.div>
@@ -146,7 +148,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="absolute right-6 top-1/2 hidden -translate-y-1/2 xl:block"
         >
-          <CircularScrollCTA label="My Projects" targetId="projects" />
+          <CircularScrollCTA label={t('hero.scrollLabel')} targetId="projects" />
         </motion.div>
       </div>
     </section>

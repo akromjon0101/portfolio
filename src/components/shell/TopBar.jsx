@@ -4,6 +4,8 @@ import { Home, User, Briefcase, Layers, Gauge, LayoutGrid, Mail, Menu, X, FileDo
 import { GithubIcon } from '../icons/BrandIcons.jsx'
 import { navSections } from '../../data/navSections.js'
 import { profile } from '../../data/config.js'
+import { useT } from '../../i18n/index.jsx'
+import LanguageSwitcher from '../LanguageSwitcher.jsx'
 import useScrollSpy from '../../hooks/useScrollSpy.js'
 
 const iconMap = { Home, User, Briefcase, Layers, Gauge, LayoutGrid, Mail }
@@ -14,6 +16,7 @@ const ids = navSections.map((s) => s.id)
 // right that opens the full link list — the sidebar/rail cover desktop
 // navigation visually, but the overlay is the actual keyboard/mobile path.
 export default function TopBar() {
+  const t = useT()
   const [open, setOpen] = useState(false)
   const activeId = useScrollSpy(ids)
   const active = navSections.find((s) => s.id === activeId) ?? navSections[0]
@@ -38,19 +41,24 @@ export default function TopBar() {
           </a>
           <span className="hidden items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-xs font-medium uppercase tracking-wide text-ink-dim lg:inline-flex">
             <ActiveIcon size={13} className="text-accent" />
-            {active.label}
+            {t(`nav.${active.id}`)}
           </span>
         </div>
 
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          aria-expanded={open}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-ink transition-colors hover:border-border-strong lg:mr-24"
-        >
-          {open ? <X size={18} /> : <Menu size={18} />}
-        </button>
+        <div className="flex items-center gap-2">
+          <div className="lg:hidden">
+            <LanguageSwitcher compact />
+          </div>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? t('common.closeMenu') : t('common.openMenu')}
+            aria-expanded={open}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-ink transition-colors hover:border-border-strong lg:mr-24"
+          >
+            {open ? <X size={18} /> : <Menu size={18} />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -80,12 +88,16 @@ export default function TopBar() {
                     className="flex items-center gap-3 rounded-xl px-4 py-3 text-2xl font-semibold text-ink-dim transition-colors hover:text-ink"
                   >
                     <Icon size={20} className="text-accent" />
-                    {section.label}
+                    {t(`nav.${section.id}`)}
                   </a>
                 )
               })}
 
               <div className="mt-8 flex items-center gap-3">
+                <LanguageSwitcher />
+              </div>
+
+              <div className="mt-2 flex items-center gap-3">
                 <a
                   href={profile.github}
                   target="_blank"
@@ -99,7 +111,7 @@ export default function TopBar() {
                   download
                   className="flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-canvas"
                 >
-                  <FileDown size={16} /> Resume
+                  <FileDown size={16} /> {t('common.resume')}
                 </a>
               </div>
             </motion.nav>

@@ -5,6 +5,7 @@ import SectionHeading from './SectionHeading.jsx'
 import Reveal from './Reveal.jsx'
 import { StaggerGroup, StaggerItem } from './Stagger.jsx'
 import { profile } from '../data/config.js'
+import { useT } from '../i18n/index.jsx'
 
 const contactLinks = [
   { icon: Mail, label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
@@ -15,24 +16,25 @@ const contactLinks = [
 
 const initialForm = { name: '', email: '', subject: '', message: '' }
 
-function validate(values) {
+function validate(values, t) {
   const errors = {}
-  if (!values.name.trim()) errors.name = 'Please enter your name.'
+  if (!values.name.trim()) errors.name = t('contact.errName')
   if (!values.email.trim()) {
-    errors.email = 'Please enter your email.'
+    errors.email = t('contact.errEmail')
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
-    errors.email = 'Please enter a valid email address.'
+    errors.email = t('contact.errEmailValid')
   }
-  if (!values.subject.trim()) errors.subject = 'Please add a subject.'
+  if (!values.subject.trim()) errors.subject = t('contact.errSubject')
   if (!values.message.trim()) {
-    errors.message = 'Please write a short message.'
+    errors.message = t('contact.errMessage')
   } else if (values.message.trim().length < 10) {
-    errors.message = 'Message should be at least 10 characters.'
+    errors.message = t('contact.errMessageLen')
   }
   return errors
 }
 
 export default function Contact() {
+  const t = useT()
   const [values, setValues] = useState(initialForm)
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle') // idle | submitting | sent
@@ -45,7 +47,7 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const nextErrors = validate(values)
+    const nextErrors = validate(values, t)
     setErrors(nextErrors)
     if (Object.keys(nextErrors).length > 0) return
 
@@ -62,9 +64,9 @@ export default function Contact() {
       <div className="container-xl grid min-w-0 gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <div className="flex min-w-0 flex-col gap-8">
           <SectionHeading
-            eyebrow="Contact"
-            title="Let's Build Something"
-            subtitle="Have an idea, project or opportunity? Let's talk."
+            eyebrow={t('contact.eyebrow')}
+            title={t('contact.title')}
+            subtitle={t('contact.subtitle')}
           />
 
           <StaggerGroup className="flex flex-col gap-3">
@@ -92,7 +94,7 @@ export default function Contact() {
         <Reveal delay={0.15} as="form" onSubmit={handleSubmit} noValidate className="panel flex min-w-0 flex-col gap-5 rounded-3xl border border-border bg-surface p-6 sm:p-8">
           <div className="grid gap-5 sm:grid-cols-2">
             <Field
-              label="Name"
+              label={t('contact.name')}
               name="name"
               value={values.name}
               onChange={handleChange}
@@ -100,7 +102,7 @@ export default function Contact() {
               autoComplete="name"
             />
             <Field
-              label="Email"
+              label={t('contact.email')}
               name="email"
               type="email"
               value={values.email}
@@ -111,7 +113,7 @@ export default function Contact() {
           </div>
 
           <Field
-            label="Subject"
+            label={t('contact.subject')}
             name="subject"
             value={values.subject}
             onChange={handleChange}
@@ -119,7 +121,7 @@ export default function Contact() {
           />
 
           <Field
-            label="Message"
+            label={t('contact.message')}
             name="message"
             as="textarea"
             rows={5}
@@ -135,20 +137,20 @@ export default function Contact() {
           >
             {status === 'sent' ? (
               <>
-                <CheckCircle2 size={16} /> Message Sent
+                <CheckCircle2 size={16} /> {t('contact.sent')}
               </>
             ) : status === 'submitting' ? (
-              'Sending…'
+              t('contact.sending')
             ) : (
               <>
-                Send Message <Send size={15} />
+                {t('contact.send')} <Send size={15} />
               </>
             )}
           </button>
 
           {status === 'sent' && (
             <p role="status" className="text-sm text-accent">
-              Thanks for reaching out — I&apos;ll get back to you soon.
+              {t('contact.success')}
             </p>
           )}
         </Reveal>
