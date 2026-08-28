@@ -10,7 +10,7 @@ import { useT } from '../i18n/index.jsx'
 const contactLinks = [
   { icon: Mail, label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
   { icon: GithubIcon, label: 'GitHub', value: '@' + profile.github.split('/').pop(), href: profile.github },
-  { icon: LinkedinIcon, label: 'LinkedIn', value: '@' + profile.linkedin.split('/').pop(), href: profile.linkedin },
+  { icon: LinkedinIcon, label: 'LinkedIn', value: 'Akromjon Toshpulatov', href: profile.linkedin },
   { icon: TelegramIcon, label: 'Telegram', value: '@' + profile.telegram.split('/').pop(), href: profile.telegram },
 ]
 

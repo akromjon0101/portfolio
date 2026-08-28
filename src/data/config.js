@@ -8,7 +8,7 @@ export const profile = {
   roleKey: 'common.role',
   email: 'akromjontoshpulatov0101@gmail.com',
   github: 'https://github.com/akromjon0101',
-  linkedin: 'https://linkedin.com/in/akromjontoshpulatov',
+  linkedin: 'https://www.linkedin.com/in/akromjon-toshpulatov-91035b253/',
   telegram: 'https://t.me/akromjontoshpulatov',
   resumeUrl: '/resume.pdf',
 }
